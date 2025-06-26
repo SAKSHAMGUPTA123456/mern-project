@@ -28,7 +28,6 @@ const response=await fetch(uri,{
   headers:{
     "content-type":"application/json"
   },
-  credentials:true,
   body:JSON.stringify(olddetails)
 })
 if(response.ok){
