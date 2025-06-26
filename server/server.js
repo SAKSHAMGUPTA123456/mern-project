@@ -10,7 +10,7 @@ const app = express();
 
 // ✅ Apply CORS to all routes
 app.use(cors({
-  origin: 'https://thapaservices-frontend.vercel.app',
+  origin: 'https://mern-project-frontends.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials:true
