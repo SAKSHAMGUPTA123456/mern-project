@@ -4,7 +4,7 @@ import { useState } from "react"
 const Service=()=>{
     const [oldupdate,newupdate]=useState(true)
     const [oldarray,newarray]=useState()
-    const uri="https://thapaservices-backend.up.railway.app/home/service"
+    const uri="https://mern-project-backend-c97u.onrender.com/home/service"
 const fetchingdata=async()=>{
     const response=await fetch(uri,{
         method:"GET",

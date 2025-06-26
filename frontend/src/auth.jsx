@@ -21,7 +21,7 @@ export const Authprovider = ({ children }) => {
 
   const userauthentication = useCallback(async () => {
     try {
-      const response = await fetch("https://thapaservices-backend.up.railway.app/home/user", {
+      const response = await fetch("https://mern-project-backend-c97u.onrender.com/home/user", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${oldtoken}`,

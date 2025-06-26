@@ -14,7 +14,7 @@ const [olddetails,newdetails]=useState({
     phone:""
 })
 const gettingsingleuserdata=useCallback(async(req,res)=>{
-    const response=await fetch(`http://localhost:9001/admin/user/individual/${id}`,{
+    const response=await fetch(`https://mern-project-backend-c97u.onrender.com/admin/user/individual/${id}`,{
         method:"GET",
         headers:{
             Authorization:`Bearer ${oldtoken}`
