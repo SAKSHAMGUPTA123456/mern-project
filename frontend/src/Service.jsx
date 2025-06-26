@@ -18,6 +18,7 @@ const fetchingdata=async()=>{
     if(response.ok){
         const gh=await response.json()
       newarray(gh.details)
+      console.log(gh)
     }
 }
     useEffect(()=>{
