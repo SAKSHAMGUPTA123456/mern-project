@@ -51,5 +51,5 @@ userschema.methods.generatetoken = async function () {
     }
   );
 };
-const User=mongoose.model('testings',userschema)
+const User=mongoose.model('realdatabasehavingusersdetails',userschema)
 module.exports=User
