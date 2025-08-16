@@ -18,10 +18,9 @@ export const Authprovider = ({ children }) => {
   };
 
   const updating = !!oldtoken;
-
   const userauthentication = useCallback(async () => {
     try {
-      const response = await fetch("https://mern-project-backend-c97u.onrender.com/home/user", {
+      const response = await fetch("http://localhost:9001/home/user", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${oldtoken}`,

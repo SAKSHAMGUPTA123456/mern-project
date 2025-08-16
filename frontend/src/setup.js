@@ -11,6 +11,7 @@ import { Admin } from "./admin";
 import { User } from "./Adminuser";
 import Updateuseradmin from "./gettinguserindividualdata";
 import { Allcontact } from "./Allcontactdata";
+import Portfolio from './portfolio'
 const router=createBrowserRouter([
     {
      path:"/",
@@ -32,6 +33,10 @@ const router=createBrowserRouter([
     {
         path:"/login",
         element:<Login/>
+    },
+    {
+        path:"/portfolio",
+        element:<Portfolio/>
     },
     {
         path:"/service",

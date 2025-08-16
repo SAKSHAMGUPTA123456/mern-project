@@ -5,7 +5,6 @@ import { Useauth } from '../auth'
 export const Navbar = ({value,value2}) => {
   const Toggle = () => value(!value2);
 const {updating}=Useauth()
-
   return (
     <>
       <div className={!value2?"blue flex justify-between item-center p-4":"flex justify-between items-center p-4"}>
@@ -64,6 +63,11 @@ Login
   className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-white my-2"}>
 Logout
 </NavLink> }
+ {!updating?"":<NavLink
+  to="/portfolio"
+  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-white my-2"}>
+Portfolio
+</NavLink> }
         </div>
       </div>
 
@@ -114,6 +118,10 @@ Login
   to="/logout"
   className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
 Logout
+</NavLink> }{!updating?"":<NavLink
+  to="/portfolio"
+  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-white my-2"}>
+Portfolio
 </NavLink> }
         </motion.div>
       )}

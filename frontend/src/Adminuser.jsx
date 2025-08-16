@@ -5,7 +5,7 @@ export const User = () => {
   const [olddata, newdata] = useState([]);
 const {oldtoken}=Useauth()
   const getuserdata = async () => {
-    const response = await fetch("https://mern-project-backend-c97u.onrender.com/admin/user", {
+    const response = await fetch("http://localhost:9001/admin/user", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -21,7 +21,7 @@ const {oldtoken}=Useauth()
   }, []);
 const handledelete=async(value)=>{
   console.log(olddata)
-const response=await fetch(`https://mern-project-backend-c97u.onrender.com/admin/user/${value}`,{
+const response=await fetch(`https:localhost:9001/admin/user/${value}`,{
   method:"DELETE",
   headers:{
     Authorization:`Bearer ${oldtoken}`
