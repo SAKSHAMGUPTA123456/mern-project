@@ -12,4 +12,5 @@ router.post('/login',validate(loginschema),authtaking.login)
 router.get('/service',authtaking.service)
 router.get('/user',checkinguser,authtaking.user)
 router.post('/message',validate(contactzod),authtaking.message)
+router.get('/purchasedcour',authtaking.purchasedcour);
 module.exports=router

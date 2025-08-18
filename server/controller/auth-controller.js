@@ -1,6 +1,7 @@
 const User=require('../user-model')
 const Service=require('../servicemodel')
 const Contact=require('../messagemodel')
+const payedcourses=require('../paymentcourses')
 const home=async(req,res)=>{
 const {username,email,phone,password}=req.body
 const userexist=await User.findOne({email})
@@ -49,5 +50,15 @@ const {username,email,message}=req.body
 const messaging=await Contact.create({username,email,message})
 res.status(200).json({mssg:messaging})
 }
-
-module.exports={home,login,service,user,message}
+const purchasedcour = async (req, res) => {
+  try {
+    const courses = await payedcourses.find(); // get all purchased courses
+    if (!courses || courses.length === 0) {
+      return res.status(200).json({ message: "No purchased courses yet" });
+    }
+    res.status(200).json({ details: courses }); // send data to client
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+module.exports={home,login,service,user,message,purchasedcour}
