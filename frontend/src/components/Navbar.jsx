@@ -71,60 +71,75 @@ Portfolio
         </div>
       </div>
 
-      {!value2 && (
-        <motion.div
-          className="ml-2 bg-white md:hidden"
-          initial={{ x: -300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.4 }}
+
+
+
+
+{!value2 && (
+  <motion.div
+    className="ml-2 bg-white md:hidden p-4 flex flex-col gap-2"
+    initial={{ x: -300, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.4 }}
+  >
+    <NavLink
+      to="/"
+      className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+    >
+      Home
+    </NavLink>
+    <NavLink
+      to="/about"
+      className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+    >
+      About
+    </NavLink>
+    <NavLink
+      to="/service"
+      className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+    >
+      Services
+    </NavLink>
+    <NavLink
+      to="/contact"
+      className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+    >
+      Contact
+    </NavLink>
+
+    {!updating && (
+      <>
+        <NavLink
+          to="/register"
+          className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
         >
-       <NavLink
-  to="/"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-  Home
-</NavLink>
-         <br></br>
-         <NavLink
-  to="/about"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-  About
-</NavLink>
- <br></br>
-  <NavLink
-  to="/service"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-  Services
-</NavLink>
- <br></br>
-  <NavLink
-  to="/contact"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-  Contact
-</NavLink>
- <br></br>
-{!updating?<NavLink
-  to="/register"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-Register
-</NavLink>
- :""}
- <br></br>
-{!updating? <NavLink
-  to="/login"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-Login
-</NavLink>
- : <NavLink
-  to="/logout"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-[#1877F2] my-2"}>
-Logout
-</NavLink> }{!updating?"":<NavLink
-  to="/portfolio"
-  className={({ isActive }) =>isActive ? "text-blue-700 font-bold my-2" : "text-white my-2"}>
-Portfolio
-</NavLink> }
-        </motion.div>
-      )}
-    </>
-  );
-};
+          Register
+        </NavLink>
+        <NavLink
+          to="/login"
+          className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+        >
+          Login
+        </NavLink>
+      </>
+    )}
+
+    {updating && (
+      <>
+        <NavLink
+          to="/logout"
+          className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+        >
+          Logout
+        </NavLink>
+        <NavLink
+          to="/portfolio"
+          className={({ isActive }) => isActive ? "text-blue-700 font-bold" : "text-[#1877F2]"}
+        >
+          Portfolio
+        </NavLink>
+      </>
+    )}
+  </motion.div>
+)}
+</>)}
