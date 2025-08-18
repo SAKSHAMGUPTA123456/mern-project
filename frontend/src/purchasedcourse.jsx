@@ -50,7 +50,9 @@ export const Alreadypurchased = () => {
       const purchasedDetails = wholeoldarray.filter(course =>
         oldarray.some(p => p.courseId === course._id)
       );
+      if(purchasedDetails!=0){
       newa(purchasedDetails);
+      }
     }
   };
 
