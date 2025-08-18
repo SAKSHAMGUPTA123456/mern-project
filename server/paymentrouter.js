@@ -67,7 +67,8 @@ paymentrouter.post('/payment-success', async (req, res) => {
     const payment = await payedcourses.create({
       // userId,
       // courseId: courseId.toString(), // ensure string if schema expects string
-      courseId:"0"
+      courseId:"0",
+      userId:"0"
     });
     console.log("Payment saved:", payment);
 
