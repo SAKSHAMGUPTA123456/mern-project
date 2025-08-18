@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
-import { Navigate,useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 export const Alreadypurchased = () => {
   const [oldupdate, newupdate] = useState(true);
   const [oldarray, newarray] = useState([]); // purchased
