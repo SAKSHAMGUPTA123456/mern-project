@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import {useNavigate } from "react-router-dom";
 export const Alreadypurchased = () => {
   const [oldupdate, newupdate] = useState(true);
+  const token=localStorage.getItem('token')
   const [oldarray, newarray] = useState([]); // purchased
   const [wholeoldarray, narray] = useState([]); // all courses
   const [actual, newa] = useState([]); // purchased full details
@@ -12,7 +13,9 @@ export const Alreadypurchased = () => {
     try {
       const data = await fetch("https://mern-project-tv78.onrender.com/home/purchasedcour", {
         method: "GET",
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": "application/json", 
+         "Authorization": `Bearer ${token}`,
+        },
       });
 
       if (data.ok) {
