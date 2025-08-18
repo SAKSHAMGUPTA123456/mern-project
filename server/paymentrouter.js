@@ -49,7 +49,8 @@ paymentrouter.post('/payment-success', async (req, res) => {
     if (expectedSignature === razorpay_signature) {
       // Payment verified
 
-      await payedcourses.create({courseId})
+     await payedcourses.create({ userId, courseId });
+
     } else {
       res.status(400).json({ error: 'Invalid signature' });
     }

@@ -52,12 +52,24 @@ res.status(200).json({mssg:messaging})
 }
 const purchasedcour = async (req, res) => {
   try {
-    const courses = await payedcourses.find(); // get all purchased courses
+    // Get token from headers (Authorization: Bearer <token>)
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+    // Decode token to get userId
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const userId = decoded.id;
+
+    // Fetch only courses purchased by this user
+    const courses = await payedcourses.find({ userId });
+
     if (!courses || courses.length === 0) {
       return res.status(200).json({ message: "No purchased courses yet" });
     }
-    res.status(200).json({ details: courses }); // send data to client
+
+    res.status(200).json({ details: courses });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ message: err.message });
   }
 };
