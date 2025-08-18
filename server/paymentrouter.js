@@ -59,7 +59,7 @@ console.log(userId)
     }
 
     // ✅ Save to DB with correct userId
-    await payedcourses.create({ userId, courseId });
+    await payedcourses.create({courseId });
 
     return res.json({ msg: 'Payment done successfully' });
   } catch (err) {
