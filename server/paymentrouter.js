@@ -43,8 +43,8 @@ paymentrouter.post('/payment-success', async (req, res) => {
     if (!token) return res.status(401).json({ error: 'Unauthorized' });
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET); // contains userId
-    const userId = decoded.id;
-
+    const userId = mongoose.Types.ObjectId(decoded.id);
+console.log(userId)
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, courseId } = req.body;
 
     const body = razorpay_order_id + '|' + razorpay_payment_id;
