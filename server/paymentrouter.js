@@ -46,7 +46,7 @@ paymentrouter.post('/payment-success', async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     if (!decoded?.id) return res.status(401).json({ error: 'Invalid token' });
 
-    const userId = mongoose.Types.ObjectId(decoded.id); // ✅ convert to ObjectId
+    const userId = decoded.id; // ✅ convert to ObjectId
 
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, courseId } = req.body;
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature || !courseId)
