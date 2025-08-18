@@ -2,6 +2,7 @@ const User=require('../user-model')
 const Service=require('../servicemodel')
 const Contact=require('../messagemodel')
 const payedcourses=require('../paymentcourses')
+const jwt=require('jsonwebtoken')
 const home=async(req,res)=>{
 const {username,email,phone,password}=req.body
 const userexist=await User.findOne({email})
