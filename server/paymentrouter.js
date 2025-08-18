@@ -66,3 +66,4 @@ paymentrouter.post('/payment-success', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+module.exports={paymentrouter}
