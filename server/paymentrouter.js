@@ -71,7 +71,7 @@ paymentrouter.post('/payment-success', async (req, res) => {
 
     await newPayment.save();
 
-    res.json({ msg: 'Payment done successfully', payment });
+   res.status(200).json({mssg:"payment successfull"})
   } catch (err) {
     console.error("Payment verification error:", err);
     res.status(500).json({ error: err.message });
