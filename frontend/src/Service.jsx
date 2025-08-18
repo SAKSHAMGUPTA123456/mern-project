@@ -24,16 +24,22 @@ const [token,newtoken]=useState(localStorage.getItem('token'))
   };
 
   // Fetch purchased courses
-  const fetchPurchasedCourses = async () => {
-    try {
-      const res = await fetch(purchasedURI, { method: "GET" });
-      const data = await res.json();
-      console.log(data)
-      setPurchasedCourses(data.details || []);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+const fetchPurchasedCourses = async () => {
+  try {
+    const res = await fetch(purchasedURI, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}` // send token here
+      }
+    });
+    const data = await res.json();
+    console.log(data);
+    setPurchasedCourses(data.details || []);
+  } catch (err) {
+    console.error(err);
+  }
+};
 const checkinguserin=()=>{
 if(!token){
   alert('please login first to purchase courses')
@@ -95,6 +101,7 @@ if(!token){
           await fetch("https://mern-project-tv78.onrender.com/payment/payment-success", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
+             "Authorization": `Bearer ${token}`,
             body: JSON.stringify({ ...response, courseId: course._id }),
           });
           alert(`Payment successful for ${course.service}`);
