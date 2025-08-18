@@ -64,13 +64,12 @@ paymentrouter.post('/payment-success', async (req, res) => {
 
     // 3️⃣ Save payment to DB
     console.log("Saving payment:", { userId, courseId });
-    const payment = await payedcourses.create({
-      // userId,
-      // courseId: courseId.toString(), // ensure string if schema expects string
-      courseId:"0",
-      userId:"0"
+    const newPayment = new payedcourses({
+      userId: userId,   // 🔹 replace with userId when ready
+      courseId: courseId  // 🔹 replace with courseId when ready
     });
-    console.log("Payment saved:", payment);
+
+    await newPayment.save();
 
     res.json({ msg: 'Payment done successfully', payment });
   } catch (err) {

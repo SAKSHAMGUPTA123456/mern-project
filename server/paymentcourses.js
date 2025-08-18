@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const paymentcourse = new mongoose.Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // optional, references your users collection
+        type: String,
         required: true
     },
     courseId: {
