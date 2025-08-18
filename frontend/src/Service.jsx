@@ -190,7 +190,7 @@ navigate('/alreadypurchased')
                 <button
                   onClick={() => handleBuy(course)}
                   className={`font-semibold py-2 px-4 rounded ${
-                    purchasedCourses.some((c) => c._id === course._id)
+                    purchasedCourses.some((c) => c.courseId === course._id)
                       ? "bg-gray-500 cursor-not-allowed"
                       : "bg-blue-600 hover:bg-blue-500 text-white"
                   }`}
