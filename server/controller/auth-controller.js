@@ -65,7 +65,7 @@ const purchasedcour = async (req, res) => {
     const courses = await payedcourses.find({ userId });
 
     if (!courses || courses.length === 0) {
-      return res.status(200).json({ message: "No purchased courses yet" });
+      return res.status(200).json({ details:[] });
     }
 
     res.status(200).json({ details: courses });
