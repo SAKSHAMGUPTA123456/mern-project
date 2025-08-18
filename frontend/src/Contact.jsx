@@ -43,7 +43,7 @@ useEffect(() => {
 }, [loading, oldauthen, navigate]);
 
 const registering=async()=>{
-const response=await fetch('http://localhost:9001/home/message',{
+const response=await fetch('https://mern-project-backend-c97u.onrender.com/home/message',{
   method:"POST",
   headers:{
     "content-type":"application/json"

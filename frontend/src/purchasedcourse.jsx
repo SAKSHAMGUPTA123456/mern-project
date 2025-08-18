@@ -10,7 +10,7 @@ export const Alreadypurchased = () => {
   // Fetch purchased courses
   const perfect = async () => {
     try {
-      const data = await fetch("http://localhost:9001/home/purchasedcour", {
+      const data = await fetch("https://mern-project-backend-c97u.onrender.com/home/purchasedcour", {
         method: "GET",
         headers: { "content-type": "application/json" },
       });
@@ -27,7 +27,7 @@ export const Alreadypurchased = () => {
   // Fetch all courses
   const takingwholecourses = async () => {
     try {
-      const data = await fetch("http://localhost:9001/home/service", {
+      const data = await fetch("https://mern-project-backend-c97u.onrender.com/home/service", {
         method: "GET",
         headers: { "content-type": "application/json" },
       });

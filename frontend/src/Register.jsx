@@ -30,7 +30,7 @@ const handling=(e,realentity)=>{
 const registering=async()=>{
   try{
  if(olddetails.username!=="" || olddetails.email!=="" || olddetails.phone!=="" || olddetails.password!==""){
- const response=await fetch('http://localhost:9001/home',{
+ const response=await fetch('https://mern-project-backend-c97u.onrender.com/home',{
   method:"POST",
   headers:{
     "content-type":"application/json"

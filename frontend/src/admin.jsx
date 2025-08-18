@@ -18,7 +18,7 @@ export const Admin=()=>{
     const location = useLocation();
   const isMainAdminRoute = location.pathname === "/admin";
 const testingadmin=useCallback(async(req,res)=>{
-const response=await fetch("http://localhost:9001/admin",{
+const response=await fetch("https://mern-project-backend-c97u.onrender.com/admin",{
     method:"GET",
     headers:{
         Authorization:`Bearer ${oldtoken}`

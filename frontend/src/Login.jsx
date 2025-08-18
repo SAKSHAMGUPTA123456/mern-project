@@ -4,7 +4,7 @@ import { toast } from "react-toastify"
 import { Useauth } from "./auth"
 const Login=()=>{
   const {storetoken}=Useauth()
-const uri = "http://localhost:9001/home/login";
+const uri = "https://mern-project-backend-c97u.onrender.com/home/login";
       const [oldupdate,newupdate]=useState(true)
       const [oldemail,newemail]=useState(true)
          const [oldpassword,newpassword]=useState(true)
