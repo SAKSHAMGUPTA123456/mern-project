@@ -100,10 +100,11 @@ if(!token){
         handler: async function (response) {
           const payment=await fetch("https://mern-project-tv78.onrender.com/payment/payment-success", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-             "Authorization": `Bearer ${token}`,
+            headers: { "Content-Type": "application/json",
+             "Authorization": `Bearer ${token}`
+            },
             body: JSON.stringify({ ...response, courseId: course._id }),
-          });
+        });
 if(payment.ok){
    alert(`Payment successful for ${course.service}`);
           setPurchasedCourses((prev) => [...prev, { courseId: course._id }]);
