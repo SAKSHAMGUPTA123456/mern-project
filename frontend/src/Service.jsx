@@ -98,14 +98,16 @@ if(!token){
         description: course.description,
         order_id: orderData.id,
         handler: async function (response) {
-          await fetch("https://mern-project-tv78.onrender.com/payment/payment-success", {
+          const payment=await fetch("https://mern-project-tv78.onrender.com/payment/payment-success", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
              "Authorization": `Bearer ${token}`,
             body: JSON.stringify({ ...response, courseId: course._id }),
           });
-          alert(`Payment successful for ${course.service}`);
+if(payment.ok){
+   alert(`Payment successful for ${course.service}`);
           setPurchasedCourses((prev) => [...prev, { courseId: course._id }]);
+}
         },
         prefill: { name: "John Doe", email: "john@example.com" },
         theme: { color: "#1877F2" },
