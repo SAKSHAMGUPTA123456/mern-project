@@ -2,6 +2,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const Razorpay = require('razorpay');
+const mongoose = require('mongoose');
 const Service = require('./servicemodel'); // your service model
 const crypto = require('crypto');
 const payedcourses=require('./paymentcourses')
