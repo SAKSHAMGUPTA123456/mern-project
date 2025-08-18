@@ -9,9 +9,11 @@ import Service from "./Service";
 import  {Logout}  from "./logout";
 import { Admin } from "./admin";
 import { User } from "./Adminuser";
+import { Hacking } from "./individualpurchaseddetails";
 import Updateuseradmin from "./gettinguserindividualdata";
 import { Allcontact } from "./Allcontactdata";
 import Portfolio from './portfolio'
+import { Alreadypurchased } from "./purchasedcourse";
 const router=createBrowserRouter([
     {
      path:"/",
@@ -21,6 +23,11 @@ const router=createBrowserRouter([
     {
         path:"/about",
         element:<About/>
+    },
+    {
+        path:'/individual/:id',
+        element:<Hacking/>
+
     },
     {
         path:"/contact",
@@ -44,6 +51,10 @@ const router=createBrowserRouter([
     },{
         path:"/logout",
         element:<Logout/>
+    },
+      {
+        path:"/alreadypurchased",
+        element:<Alreadypurchased/>
     },{
         path:"/admin",
         element:<Admin/>,
