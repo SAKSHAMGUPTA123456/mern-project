@@ -14,7 +14,7 @@ const [olddetails,newdetails]=useState({
     phone:""
 })
 const gettingsingleuserdata=useCallback(async(req,res)=>{
-    const response=await fetch(`https://mern-project-backend-c97u.onrender.com/admin/user/individual/${id}`,{
+    const response=await fetch(`https://mern-project-tv78.onrender.com/admin/user/individual/${id}`,{
         method:"GET",
         headers:{
             Authorization:`Bearer ${oldtoken}`
@@ -48,7 +48,7 @@ const handlingtext = (e, field) => {
 const handlesubmit=async()=>{
  console.log(olddetails)
   try{
-const response=await fetch(`https://mern-project-backend-c97u.onrender.com/admin/user/update/${id}`,{
+const response=await fetch(`https://mern-project-tv78.onrender.com/admin/user/update/${id}`,{
   method:"PATCH",
   headers:{
      "Content-Type": "application/json",

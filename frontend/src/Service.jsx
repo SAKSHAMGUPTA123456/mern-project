@@ -8,8 +8,8 @@ const [token,newtoken]=useState(localStorage.getItem('token'))
   const [purchasedCourses, setPurchasedCourses] = useState([]);
   const [loading, setLoading] = useState(false); 
 
-  const coursesURI = "https://mern-project-backend-c97u.onrender.com/home/service";
-  const purchasedURI = "https://mern-project-backend-c97u.onrender.com/home/purchasedcour";
+  const coursesURI = "https://mern-project-tv78.onrender.com/home/service";
+  const purchasedURI = "https://mern-project-tv78.onrender.com/home/purchasedcour";
 
   // Fetch all courses
   const fetchCourses = async () => {
@@ -76,7 +76,7 @@ if(!token){
 
     try {
       // Create order on backend
-      const orderRes = await fetch("https://mern-project-backend-c97u.onrender.com/payment/create-order", {
+      const orderRes = await fetch("https://mern-project-tv78.onrender.com/payment/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ courseId: course._id }),
@@ -92,7 +92,7 @@ if(!token){
         description: course.description,
         order_id: orderData.id,
         handler: async function (response) {
-          await fetch("https://mern-project-backend-c97u.onrender.com/payment/payment-success", {
+          await fetch("https://mern-project-tv78.onrender.com/payment/payment-success", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ...response, courseId: course._id }),

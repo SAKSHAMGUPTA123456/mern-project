@@ -5,7 +5,7 @@ export const Allcontact=()=>{
     const {oldtoken}=Useauth()
     const [olddetails,newdetails]=useState([])
     const getallcontactdata = useCallback(async () => {
-    const response = await fetch('https://mern-project-backend-c97u.onrender.com/admin/contact', {
+    const response = await fetch('https://mern-project-tv78.onrender.com/admin/contact', {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -22,7 +22,7 @@ export const Allcontact=()=>{
 getallcontactdata()
     },[getallcontactdata])
     const handlingdelete=async(id)=>{
-        const response=await fetch(`https://mern-project-backend-c97u.onrender.com/admin/contact/delete/${id}`,{
+        const response=await fetch(`https://mern-project-tv78.onrender.com/admin/contact/delete/${id}`,{
             method:"DELETE",
             headers:{
                 Authorization:`Bearer ${oldtoken}`
