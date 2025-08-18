@@ -28,7 +28,7 @@ app.get('/', (req, res) => res.send("Server running ✅"));
 app.use(errorMiddleware);
 
 
-const port = 5000||process.env.PORT;
+const port = process.env.PORT || 5000;  // 
 connectdb().then(() => {
   app.listen(port, () => {
     console.log(`Server is running at port ${port}`);
