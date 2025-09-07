@@ -48,7 +48,7 @@ paymentrouter.post('/payment-success', async (req, res) => {
 
     const userId = decoded.id; // ✅ convert to ObjectId
 
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, courseId } = req.body;
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, courseId ,amount} = req.body;
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature || !courseId)
       return res.status(400).json({ error: 'Missing payment details' });
 
@@ -66,7 +66,8 @@ paymentrouter.post('/payment-success', async (req, res) => {
     console.log("Saving payment:", { userId, courseId });
     const newPayment = new payedcourses({
       userId: userId,   // 🔹 replace with userId when ready
-      courseId: courseId  // 🔹 replace with courseId when ready
+      courseId: courseId,
+      amount  // 🔹 replace with courseId when ready
     });
 
     await newPayment.save();
