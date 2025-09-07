@@ -103,7 +103,7 @@ if(!token){
             headers: { "Content-Type": "application/json",
              "Authorization": `Bearer ${token}`
             },
-            body: JSON.stringify({ ...response, courseId: course._id }),
+            body: JSON.stringify({ ...response, courseId: course._id ,amount:orderData.amount}),
         });
 if(payment.ok){
    alert(`Payment successful for ${course.service}`);
