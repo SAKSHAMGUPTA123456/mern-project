@@ -12,7 +12,11 @@ const paymentcourse = new mongoose.Schema({
     createdAt: { 
         type: Date, 
         default: Date.now 
-    }
+    },
+      amount:{
+        type:Number
+      }
+    
 });
 
 const payedcourses = mongoose.model('paymentcourses', paymentcourse);
